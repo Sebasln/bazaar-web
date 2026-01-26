@@ -1,0 +1,50 @@
+services:
+  # --- SERVICIO FRONTEND (Angular) ---
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      target: build
+    container_name: bazaar-front
+    restart: always
+    ports:
+      - "9090:4200"
+    networks:
+      - bazaar-net
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    # Polling es necesario en algunos sistemas para detectar cambios en volúmenes Docker
+    command: npm start -- --host 0.0.0.0 --poll 2000 --allowed-hosts
+    depends_on:
+      - backend
+
+  # --- SERVICIO BACKEND (SAP CAP) ---
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: bazaar-back
+    restart: always
+    ports:
+      - "5005:4004"
+    networks:
+      - bazaar-net
+    volumes:
+      - ./backend:/app
+      # El volumen "escudo" para proteger node_modules
+      - backend_node_modules:/app/node_modules
+    environment:
+      - HOST=0.0.0.0
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+    env_file:
+      - ./backend/.env
+    command: npx cds run
+
+networks:
+  bazaar-net:
+    driver: bridge
+
+# Definición explicita del volumen
+volumes:
+  backend_node_modules: {}
