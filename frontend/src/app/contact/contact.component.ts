@@ -1,0 +1,14 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+
+@Component({
+    selector: 'app-contact',
+    standalone: true,
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './contact.html',
+    styleUrl: './contact.css'
+})
+export class ContactComponent {
+    // Aquí podríamos crear un signal para la info de contacto
+}

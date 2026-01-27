@@ -1,0 +1,33 @@
+<section class="hero">
+    <div class="hero-content">
+        <h1>{{ 'MAIN.WELCOME' | translate }}</h1>
+        <p>{{ 'MAIN.SUBTITLE' | translate }}</p>
+        <button class="btn-primary">{{ 'MAIN.CATALOG_BTN' | translate }}</button>
+    </div>
+</section>
+
+<section class="featured-products">
+    <h2>{{ 'MAIN.CATEGORIES_TITLE' | translate }}</h2>
+    <!-- Aquí irán los productos más tarde -->
+    <div class="placeholder-grid">
+        @for(cat of categories(); track cat.id){
+        <div class="item">
+            <span>{{ cat.name }}</span>
+        </div>
+        }
+    </div>
+</section>
+
+<section class="featured-products">
+    <h2>{{ 'MAIN.FEATURED_PRODUCTS_TITLE' | translate }}</h2>
+    <div class="placeholder-grid">
+        @for(fProd of featuredProducts(); track fProd.id){
+        <div class="product-card">
+            <img src="{{ fProd.image }}" alt="{{ fProd.name }}">
+            <h3>{{ fProd.name }}</h3>
+            <p>{{ fProd.description }}</p>
+            <p>{{ fProd.price | currency : 'EUR' }}</p>
+        </div>
+        }
+    </div>
+</section>

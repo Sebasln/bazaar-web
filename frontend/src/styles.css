@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #6d4c41;
+    /* Marrón cálido para lana */
+    --accent-color: #f48fb1;
+    /* Rosa suave */
+    --bg-color: #f79999;
+    /* Color crema/blanco roto */
+    --card-bg: #fffbf5;
+}
+
+html,
+body,
+app-root {
+    /* Añadimos app-root aquí */
+    height: 100%;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+
+    /* La magia de Flexbox */
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    flex: 1;
+    padding-top: 70px;
+    background: linear-gradient(to bottom,
+            var(--bg-color) 0%,
+            var(--bg-color) 70%,
+            white 100%);
+    /* Empieza opaco con tu color y se desvanece a blanco al final */
+    /* El mismo alto que tu Navbar para que no se coma el contenido */
+    /* Esto le dice: "Tú, ocupa todo el espacio libre que quede" */
+}

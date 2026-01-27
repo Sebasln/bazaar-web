@@ -1,0 +1,32 @@
+{
+    "NAVBAR": {
+        "START": "首页",
+        "PRODUCTS": "产品",
+        "CONTACT": "联系我们"
+    },
+    "MAIN": {
+        "WELCOME": "欢迎来到钩针艺术商店",
+        "SUBTITLE": "每一针都凝聚着爱心与专注的独特作品。",
+        "CATALOG_BTN": "查看目录",
+        "CATEGORIES_TITLE": "类别",
+        "FEATURED_PRODUCTS_TITLE": "我们的作品"
+    },
+    "PRODUCTS": {
+        "AMIGURUMI_GATO": "钩针猫咪",
+        "BUFANDA": "围巾",
+        "DECORACION": "装饰品"
+    },
+    "CONTACT": {
+        "TITLE": "联系我们",
+        "SUBTITLE": "关于我们的编织作品有什么疑问吗？",
+        "FORM": {
+            "NAME": "您的姓名",
+            "EMAIL": "您的邮箱",
+            "MESSAGE": "请告诉我们您的需求...",
+            "SEND": "发送消息"
+        },
+        "COUNTRY": "西班牙",
+        "PROVINCE": "马德里",
+        "ADDRESS": "地址: Calle de la lana, 123"
+    }
+}

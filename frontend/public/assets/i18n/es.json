@@ -1,0 +1,32 @@
+{
+    "NAVBAR": {
+        "START": "Inicio",
+        "PRODUCTS": "Productos",
+        "CONTACT": "Contacto"
+    },
+    "MAIN": {
+        "WELCOME": "Bienvenidos al Bazar de Crochet",
+        "SUBTITLE": "Piezas únicas tejidas con amor y dedicación en cada punto.",
+        "CATALOG_BTN": "Ver Catálogo",
+        "CATEGORIES_TITLE": "Categorías",
+        "FEATURED_PRODUCTS_TITLE": "Nuestras Creaciones"
+    },
+    "PRODUCTS": {
+        "AMIGURUMI_GATO": "Amigurumi Gato",
+        "BUFANDA": "Bufanda",
+        "DECORACION": "Decoración"
+    },
+    "CONTACT": {
+        "TITLE": "Contacta con nosotros",
+        "SUBTITLE": "¿Tienes alguna duda sobre nuestras piezas tejidas?",
+        "FORM": {
+            "NAME": "Tu nombre",
+            "EMAIL": "Tu email",
+            "MESSAGE": "Cuéntanos qué necesitas...",
+            "SEND": "Enviar mensaje"
+        },
+        "ADDRESS": "Calle de la lana, 123",
+        "PROVINCE": "Madrid",
+        "COUNTRY": "España"
+    }
+}
