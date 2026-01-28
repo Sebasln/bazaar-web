@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 import { environment } from '../../environments/environment';
+import { Product } from '../models/product.model';
 
 @Injectable({
     providedIn: 'root'
@@ -16,7 +17,7 @@ export class SupabaseService {
      * Fetches all products from the database.
      * Professional Note: In the future, we should add pagination and filtering.
      */
-    async getProducts() {
+    async getProducts(): Promise<Product[]> {
         const { data, error } = await this.supabase
             .from('Products')
             .select('*');
