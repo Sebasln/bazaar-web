@@ -23,8 +23,8 @@
     <div class="placeholder-grid">
         @for(fProd of featuredProducts(); track fProd.id){
         <div class="product-card">
-            <img src="{{ fProd.image }}" alt="{{ fProd.name }}">
-            <h3>{{ fProd.name }}</h3>
+            <img src="{{ fProd.image }}" alt="{{ fProd.nameEs }}">
+            <h3>{{ fProd.nameEs }} | {{ fProd.nameCn }}</h3>
             <p>{{ fProd.description }}</p>
             <p>{{ fProd.price | currency : 'EUR' }}</p>
         </div>

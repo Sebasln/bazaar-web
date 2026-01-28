@@ -3,14 +3,33 @@
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "dependencies": {
-    "@sap/cds": "^9",
-    "express": "^4"
+    "@cap-js/postgres": "^1.14.0",
+    "@sap/cds": "^8",
+    "dotenv": "^16.4.0",
+    "express": "^4",
+    "pg": "^8.11.0"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^2"
+    "@cap-js/sqlite": "^2",
+    "cds-dbm": "^0.1.4"
   },
   "scripts": {
     "start": "cds-serve"
   },
-  "private": true
+  "private": true,
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "postgres",
+        "impl": "@cap-js/postgres"
+      },
+      "supabase": {
+        "kind": "postgres",
+        "impl": "@cap-js/postgres",
+        "credentials": {
+          "connectionString": "${DATABASE_URL}"
+        }
+      }
+    }
+  }
 }

@@ -1,29 +1,34 @@
-<section class="contact-container">
+<section class="contact-container" *ngIf="!showSuccess(); else successTpl">
     <div class="contact-card">
         <h1>{{ 'CONTACT.TITLE' | translate }}</h1>
         <p>{{ 'CONTACT.SUBTITLE' | translate }}</p>
 
-        <div class="contact-methods">
-            <div class="method">
-                <span class="icon">📧</span>
-                <p>info@bazardecrochet.com</p>
-            </div>
-            <div class="method">
-                <span class="icon">📱</span>
-                <p>+34 600 000 000</p>
-            </div>
-            <div class="method">
-                <span class="icon">📍</span>
-                <p>{{ 'CONTACT.PROVINCE' | translate }}, {{ 'CONTACT.COUNTRY' | translate }}<br>28000<br>{{
-                    'CONTACT.ADDRESS' | translate }}</p>
-            </div>
-        </div>
-
-        <form class="contact-form">
-            <input type="text" [placeholder]="'CONTACT.FORM.NAME' | translate">
-            <input type="email" [placeholder]="'CONTACT.FORM.EMAIL' | translate">
-            <textarea [placeholder]="'CONTACT.FORM.MESSAGE' | translate"></textarea>
-            <button class="btn-primary">{{ 'CONTACT.FORM.SEND' | translate }}</button>
+        <form class="contact-form" (submit)="onSubmit()">
+            <input type="text" 
+                   [(ngModel)]="name" 
+                   name="userName"
+                   [placeholder]="'CONTACT.FORM.NAME' | translate" required>
+            
+            <input type="email" 
+                   [(ngModel)]="email" 
+                   name="userEmail"
+                   [placeholder]="'CONTACT.FORM.EMAIL' | translate" required>
+            
+            <textarea [(ngModel)]="message" 
+                      name="userMessage"
+                      [placeholder]="'CONTACT.FORM.MESSAGE' | translate" required></textarea>
+            
+            <button class="btn-primary" [disabled]="isSending()">
+                {{ (isSending() ? 'Cargando...' : 'CONTACT.FORM.SEND' | translate) }}
+            </button>
         </form>
     </div>
 </section>
+
+<ng-template #successTpl>
+    <div class="contact-card success">
+        <h2>¡Mensaje enviado! ✅</h2>
+        <p>Tu suegra recibirá la consulta pronto.</p>
+        <button class="btn-primary" (click)="showSuccess.set(false)">Enviar otro</button>
+    </div>
+</ng-template>
